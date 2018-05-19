@@ -49,6 +49,7 @@ while True:
     t, f, HVSR = get_fdsn_station_day(ntwk,stn,chn,time_step=2)
     
     time_stamps = [datetime.datetime.fromtimestamp(i) for i in t]
+    plt.gcf().clear()
     plt.pcolormesh(time_stamps, f, HVSR, cmap='plasma_r', vmin=-2, vmax=4)
     axes = plt.gca()
     axes.set_ylim([.1,10])
